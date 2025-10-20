@@ -36,31 +36,32 @@
 
 I executed the scan in two different ways to check if the result varies or not:
 
-A)	Running the command with administrator/root privileges for the TCP SYN scan (-sS) to work correctly. 
+1)	Running the command with administrator/root privileges for the TCP SYN scan (-sS) to work correctly. 
 
       •	In Windows: Right-click on Command Prompt and select "Run as Administrator."<br>
       •	The Command Prompt uses CLI (Command Line Interface) which allows you to use flags (like -sS and -oA in your command), which unlock Nmap’s most advanced and specific features.
   	<br>
 
-B)	Run the command in Nmap directly.
+2)	Run the command in Nmap directly.
 
       •	It is a GUI (Graphical User Interface). Generally, This is what you're used to (like clicking a web browser or the Nmap installer). It's easy because it is designed in an interactive manner (clicking buttons, Options/Filters, etc) but it limits you to the options the developers put into buttons and menus.
 
-C)  After running the scan, Both Command Prompt and Nmap provided me with the same results.
+3)  After running the scan, Both Command Prompt and Nmap provided me with the same results.
 
 
     <br> <img width="1093" height="1188" alt="Screenshot 2025-10-20 204214" src="https://github.com/user-attachments/assets/47db7231-6796-41a1-952b-9fc3336bdebf" />  <br>
 
     <br>  <img width="877" height="1061" alt="Screenshot 2025-10-20 203717" src="https://github.com/user-attachments/assets/be89015f-5724-4421-a691-c92086ad3b59" />  <br>
 
-<br> D) I have also captured the packet for further analysis using Wireshark <br>
 
-<br> <img width="1919" height="1199" alt="Screenshot 2025-10-20 205134" src="https://github.com/user-attachments/assets/3c85e07c-9fac-47a3-b4ce-76e3e7c98f38" />   <br>
+4) I have also captured the packet for further analysis using Wireshark <br>
+
+   <br>    <img width="1919" height="1199" alt="Screenshot 2025-10-20 205134" src="https://github.com/user-attachments/assets/3c85e07c-9fac-47a3-b4ce-76e3e7c98f38" />   <br>
 
  
 <br>  
 
-**Step-4: Noting down the IP addresses and open ports found:**
+**Step-4: Noting down the IP Addresses, Open Ports, and Services found:**
 
       
 ## Nmap Scan Results: Active Hosts and Open Ports
@@ -73,4 +74,28 @@ C)  After running the scan, Both Command Prompt and Nmap provided me with the sa
 | **192.168.29.25** | Active Host (Secure/Firewalled) | *None* | *All 1000 scanned ports were reported as closed.* |
 <br>
 
+<br>
 
+**Step-5: Identify Potential Security Risks from Open Ports:**  <br>
+
+The most critical part of this task is researching of commonly running services on these ports. An open port is only a risk if the service running on it is vulnerable or misconfigured.
+
+The highest risk ports you found are:
+<br>
+1) Ports 139/tcp and 445/tcp (SMB/CIFS): These are used for Windows file and printer sharing.
+
+     • Risk: If the operating system (OS) or the sharing service is not patched, an attacker can exploit vulnerabilities like the infamous EternalBlue to gain control or plant malware (e.g., ransomware). It also exposes system information like user lists and shared folders to anyone on the network.  <br>
+     
+
+2) Port 1900/tcp (UPnP): This protocol allows devices to open ports on your router automatically without your permission.
+
+     • Risk: Malware can use UPnP to open a port for itself, bypassing your firewall and making your device reachable from the public internet.  <br>
+     
+
+3) Ports 80/tcp, 443/tcp, 8080/tcp, 8443/tcp (Web Services):
+
+     • Risk: If the router's management interface or a local application running on these ports is running old software, it can be vulnerable to exploits like Cross-Site Scripting (XSS) or Authentication Bypass. Since the router is on 192.168.29.1, it's the primary risk point.  <br>
+     
+4) Port 554/tcp (RTSP): If this is a camera, it likely requires strong authentication.
+
+     • Risk: Weak or default passwords on an exposed camera/video system could allow an attacker to view your video feed.
