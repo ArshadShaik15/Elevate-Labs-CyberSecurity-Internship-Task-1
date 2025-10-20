@@ -68,10 +68,10 @@ I executed the scan in two different ways to check if the result varies or not:
 
 | IP Address | Host Description (Service Profile) | Open Ports (TCP) | Key Services Identified |
 | :--- | :--- | :--- | :--- |
-| **192.168.29.1** | Network Gateway / Router 📡 | 80, 443, 1900, 7443, 8080, 8443 | HTTP, HTTPS, UPnP, HTTPS-alt |
-| **192.168.29.15** | Windows Device (PC/Server) 🖥️ | 135, 139, 445, 1069, 4343, 4449, 7070 | MSRPC, NetBIOS/SMB (File Sharing), Realserver |
-| **192.168.29.50** | Streaming/Video Device | 80, 554 | HTTP, **RTSP** (Real-Time Streaming Protocol) |
-| **192.168.29.25** | Active Host (Secure/Firewalled) | *None* | *All 1000 scanned ports were reported as closed.* |
+| **192.168.29.X** | Network Gateway / Router 📡 | 80, 443, 1900, 7443, 8080, 8443 | HTTP, HTTPS, UPnP, HTTPS-alt |
+| **192.168.29.XX** | Windows Device (PC/Server) 🖥️ | 135, 139, 445, 1069, 4343, 4449, 7070 | MSRPC, NetBIOS/SMB (File Sharing), Realserver |
+| **192.168.29.YY** | Streaming/Video Device | 80, 554 | HTTP, **RTSP** (Real-Time Streaming Protocol) |
+| **192.168.29.ZZ** | Active Host (Secure/Firewalled) | *None* | *All 1000 scanned ports were reported as closed.* |
 <br>
 
 <br>
@@ -111,6 +111,6 @@ The highest risk ports you found are:
 
 3)    To mitigate these immediate security risks, the following actions are strongly recommended: <br>
 
-        •     Disable UPnP on the router (192.168.29.1) to prevent unauthorized firewall bypasses. <br>
+        •     Disable UPnP on the router (192.168.29.X) to prevent unauthorized firewall bypasses. <br>
         •     Block TCP Ports 139 and 445 on all non-essential devices using the Windows Firewall or, preferably, disable the File and Printer Sharing service completely. <br>
         •     Enforce a strong, non-default password on the router's administration interface. <br>
