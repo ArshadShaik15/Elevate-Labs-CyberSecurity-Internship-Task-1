@@ -99,3 +99,6 @@ The highest risk ports you found are:
 4) Port 554/tcp (RTSP): If this is a camera, it likely requires strong authentication.
 
      • Risk: Weak or default passwords on an exposed camera/video system could allow an attacker to view your video feed.
+
+
+   
