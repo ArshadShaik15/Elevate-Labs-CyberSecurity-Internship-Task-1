@@ -48,9 +48,11 @@ I executed the scan in two different ways to check if the result varies or not:
 3)  After running the scan, Both Command Prompt and Nmap provided me with the same results.
 
 
-    <img width="1093" height="1199" alt="Screenshot 2025-10-20 204214" src="https://github.com/user-attachments/assets/98aad51b-e2df-46ef-a1ac-12ce14308313" />
+    <br>  <img width="1093" height="1188" alt="Screenshot 2025-10-20 204214" src="https://github.com/user-attachments/assets/47db7231-6796-41a1-952b-9fc3336bdebf" /> <br>
 
-    <br> 
+
+    
+    
 **Step-4: Noting down the IP addresses and open ports found:**
 
       
