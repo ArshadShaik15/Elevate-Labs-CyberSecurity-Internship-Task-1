@@ -3,10 +3,9 @@
 <br>Task 1: Local Network Port Scan<br><br>
 
 
-**Step-1: Installing Nmap:**
-
-•	I have installed the latest version of Nmap for windows from the official website.
-•	Official Website: Navigate to the Nmap download page
+**Step-1: Installing Nmap:** <br>
+•	I have installed the latest version of Nmap for windows from the official website. <br>
+•	Official Website: Navigate to the Nmap download page <br>
 •	Download the Installer: Choose the installer for your operating system (Windows, Linux, macOS). For Windows, the installer is usually called nmap-setup.exe
 
 <br>
