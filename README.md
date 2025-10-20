@@ -94,7 +94,7 @@ The highest risk ports you found are:
 
 3) Ports 80/tcp, 443/tcp, 8080/tcp, 8443/tcp (Web Services):
 
-     • Risk: If the router's management interface or a local application running on these ports is running old software, it can be vulnerable to exploits like Cross-Site Scripting (XSS) or Authentication Bypass. Since the router is on 192.168.29.1, it's the primary risk point.  <br>
+     • Risk: If the router's management interface or a local application running on these ports is running old software, it can be vulnerable to exploits like Cross-Site Scripting (XSS) or Authentication Bypass. Since the router is on **192.168.29.1**, it's the primary risk point.  <br>
      
 4) Port 554/tcp (RTSP): If this is a camera, it likely requires strong authentication.
 
@@ -102,15 +102,15 @@ The highest risk ports you found are:
 <br>
 
    
-<br> **Conclusion**  <br>
+<br> **Conclusion:**  <br>
 
-1)    The Nmap TCP SYN scan of the local network (192.168.29.0/24) successfully identified four active hosts. The analysis focused on the three devices that presented open ports to the network.<br> 
-2)    The scan revealed critical security gaps, most notably on host 192.168.29.XX (Windows device) and the network router (192.168.29.X).  <br> The primary risk vectors identified were: <br> 
-        •    File Sharing (Ports 139/445): These exposed services are vulnerable to well-known exploits (e.g., EternalBlue) if the operating system is not fully patched.<br> 
-        •    UPnP (Port 1900): This service grants devices the ability to automatically bypass the router's firewall, creating an unauthorized vulnerability for malware.
+1)    The Nmap TCP SYN scan of the local network **(192.168.29.0/24)** successfully identified four active hosts. The analysis focused on the three devices that presented open ports to the network.<br>
 
-3)    To mitigate these immediate security risks, the following actions are strongly recommended: <br>
+2)    The scan revealed critical security gaps, most notably on host **192.168.29.XX** and the network router **(192.168.29.X)**. <br> The primary risk vectors identified were: <br> 
+        •    File Sharing **(Ports 139/445)**: These exposed services are vulnerable to well-known exploits **(e.g., EternalBlue)** if the operating system is not fully patched.<br> 
+        •    **UPnP (Port 1900):** This service grants devices the ability to automatically bypass the router's firewall, creating an unauthorized vulnerability for malware.
 
-        •     Disable UPnP on the router (192.168.29.X) to prevent unauthorized firewall bypasses. <br>
+4)    To mitigate these immediate security risks, the following actions are strongly recommended: <br>
+        •     Disable UPnP on the router **(192.168.29.X)** to prevent unauthorized firewall bypasses. <br>
         •     Block TCP Ports 139 and 445 on all non-essential devices using the Windows Firewall or, preferably, disable the File and Printer Sharing service completely. <br>
         •     Enforce a strong, non-default password on the router's administration interface. <br>
