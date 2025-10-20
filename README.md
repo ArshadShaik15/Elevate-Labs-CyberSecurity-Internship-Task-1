@@ -51,12 +51,12 @@ I executed the scan in two different ways to check if the result varies or not:
     <br>  <img width="748" height="814" alt="Screenshot 2025-10-20 232300" src="https://github.com/user-attachments/assets/521a2fd6-7e44-431f-9a25-05a8cc7d276a" />  <br>
  
 
-    <br>  <img width="750" height="905" alt="Screenshot 2025-10-20 231720" src="https://github.com/user-attachments/assets/4c08cd18-4840-449d-926c-d73eee2678fe" />  <br>
+    <br>  <img width="710" height="858" alt="Screenshot 2025-10-20 232702" src="https://github.com/user-attachments/assets/73f20b98-2292-4e46-b9e3-49a98bf14144" />  <br>
 
 
 4) I have also captured the packet for further analysis using Wireshark <br>
 
-    <br>  <img width="710" height="858" alt="Screenshot 2025-10-20 232702" src="https://github.com/user-attachments/assets/73f20b98-2292-4e46-b9e3-49a98bf14144" />  <br>
+    <br>  <img width="1508" height="921" alt="Screenshot 2025-10-20 233525" src="https://github.com/user-attachments/assets/4fbcd13a-a307-4641-a20f-fb5decedbea3" />  <br>
 
  
 <br>  
