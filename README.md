@@ -20,7 +20,7 @@
   
     c.	Identify the range by looking for the section related to your Wi-Fi or Ethernet connection.
   
-    d.	Find the IPv4 Address (e.g., 192.168.1.2)
+    d.	Find the IPv4 Address (e.g., 192.168.1.10)
   
     e.	Find the Subnet Mask (e.g., 255.255.255.0)
   	
