@@ -104,4 +104,13 @@ The highest risk ports you found are:
    
 <br> **Conclusion**  <br>
 
-<br> 
+1)    The Nmap TCP SYN scan of the local network (192.168.29.0/24) successfully identified four active hosts. The analysis focused on the three devices that presented open ports to the network.<br> 
+2)    The scan revealed critical security gaps, most notably on host 192.168.29.XX (Windows device) and the network router (192.168.29.X).  <br> The primary risk vectors identified were: <br> 
+        •    File Sharing (Ports 139/445): These exposed services are vulnerable to well-known exploits (e.g., EternalBlue) if the operating system is not fully patched.<br> 
+        •    UPnP (Port 1900): This service grants devices the ability to automatically bypass the router's firewall, creating an unauthorized vulnerability for malware.
+
+3)    To mitigate these immediate security risks, the following actions are strongly recommended: <br>
+
+        •     Disable UPnP on the router (192.168.29.1) to prevent unauthorized firewall bypasses. <br>
+        •     Block TCP Ports 139 and 445 on all non-essential devices using the Windows Firewall or, preferably, disable the File and Printer Sharing service completely. <br>
+        •     Enforce a strong, non-default password on the router's administration interface. <br>
