@@ -48,14 +48,15 @@ I executed the scan in two different ways to check if the result varies or not:
 3)  After running the scan, Both Command Prompt and Nmap provided me with the same results.
 
 
-    <br> <img width="1093" height="1188" alt="Screenshot 2025-10-20 204214" src="https://github.com/user-attachments/assets/47db7231-6796-41a1-952b-9fc3336bdebf" />  <br>
+    <br>  <img width="748" height="814" alt="Screenshot 2025-10-20 232300" src="https://github.com/user-attachments/assets/521a2fd6-7e44-431f-9a25-05a8cc7d276a" />  <br>
+ 
 
-    <br>  <img width="877" height="1061" alt="Screenshot 2025-10-20 203717" src="https://github.com/user-attachments/assets/be89015f-5724-4421-a691-c92086ad3b59" />  <br>
+    <br>  <img width="750" height="905" alt="Screenshot 2025-10-20 231720" src="https://github.com/user-attachments/assets/4c08cd18-4840-449d-926c-d73eee2678fe" />  <br>
 
 
 4) I have also captured the packet for further analysis using Wireshark <br>
 
-   <br>    <img width="1919" height="1199" alt="Screenshot 2025-10-20 205134" src="https://github.com/user-attachments/assets/3c85e07c-9fac-47a3-b4ce-76e3e7c98f38" />   <br>
+    <br>  <img width="710" height="858" alt="Screenshot 2025-10-20 232702" src="https://github.com/user-attachments/assets/73f20b98-2292-4e46-b9e3-49a98bf14144" />  <br>
 
  
 <br>  
@@ -98,6 +99,9 @@ The highest risk ports you found are:
 4) Port 554/tcp (RTSP): If this is a camera, it likely requires strong authentication.
 
      • Risk: Weak or default passwords on an exposed camera/video system could allow an attacker to view your video feed.
-
+<br>
 
    
+<br> **Conclusion**  <br>
+
+<br> 
