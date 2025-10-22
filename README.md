@@ -1,21 +1,23 @@
 # Elevate-Labs-CyberSecurity-Internship-Task-1<br>
 
 <br>Task 1: Local Network Port Scan<br><br>
+<br>
 
-**🎯 Objective:**  <br>
+### **🎯 Objective:**  <br>
 
 The primary goal of this task is to learn and practice fundamental network reconnaissance skills by discovering open ports on devices within a local network to understand the network's exposure and potential security risks. <br>
 <br> 
-
-**Step-1: Lab Setup 🛠️** <br>
 <br>
-**Installing Nmap:**  <br>
+
+### **Step-1: Lab Setup 🛠️** <br>
+
+### **Installing Nmap:**  <br>
 &nbsp; •	I have installed the latest version of Nmap for windows from the official website. <br>
 &nbsp; •	Official Website: Navigate to the Nmap download page https://nmap.org/download <br>
 &nbsp; •	Choose the installer for your operating system (Windows, Linux, macOS). For Windows, the installer is usually called nmap-setup.exe
 <br>
 
-**Installing Wireshark:** <br>
+### **Installing Wireshark:** <br>
 &nbsp; •	I have installed the latest version of Wireshark for windows from the official website. <br>
 &nbsp; •	Official Website: Navigate to the Wireshark download page https://www.wireshark.org/download.html <br>
 &nbsp; •	Choose the installer for your operating system (Windows, Linux, macOS). For Windows, the installer is usually called Wireshark-4.6.0-x64.exe
@@ -23,7 +25,7 @@ The primary goal of this task is to learn and practice fundamental network recon
 
 <br>
 
-**Step-2: Finding the local IP range:**
+### **Step-2: Finding the local IP range:**
 
 1)	I have found my local IP network by running the command ipconfig in Command Prompt. You can follow the steps mentioned below (I will be hiding the IP Address and MAC Address).
 
@@ -44,19 +46,19 @@ The primary goal of this task is to learn and practice fundamental network recon
 <br>
 
 
-**Step-3: Running the TCP SYN Scan:**
+### **Step-3: Running the TCP SYN Scan:**
 
 I executed the scan in two different ways to check if the result varies or not:
 
 1)	Running the command with administrator/root privileges for the TCP SYN scan (-sS) to work correctly. 
 
       •	In Windows: Right-click on Command Prompt and select "Run as Administrator."<br>
-      •	The Command Prompt uses CLI (Command Line Interface) which allows you to use flags (like -sS and -oA in your command), which unlock Nmap’s most advanced and specific features.
+      •	The Command Prompt uses CLI (Command Line Interface) which allows you to use flags (like -sS and -oA in your command), which <br> &nbsp; unlock Nmap’s most advanced and specific features.
   	<br>
 
 2)	Run the command in Nmap directly.
 
-      •	It is a GUI (Graphical User Interface). Generally, This is what you're used to (like clicking a web browser or the Nmap installer). It's easy because it is designed in an interactive manner (clicking buttons, Options/Filters, etc) but it limits you to the options the developers put into buttons and menus.
+      •	It is a GUI (Graphical User Interface). Generally, This is what you're used to (like clicking a web browser or the Nmap installer). It's easy <br> &nbsp; because it is designed in an interactive manner (clicking buttons, Options/Filters, etc) but it limits you to the options the developers put <br> &nbsp; into buttons and menus.
 
 3)  After running the scan, Both Command Prompt and Nmap provided me with the same results.
 
@@ -76,7 +78,7 @@ I executed the scan in two different ways to check if the result varies or not:
 <br>  
 <br>
 
-**Step-4: Noting down the IP Addresses, Open Ports, and Services found:**
+### **Step-4: Noting down the IP Addresses, Open Ports, and Services found:**
 
       
 ### **Nmap Scan Results: Active Hosts and Open Ports**
@@ -91,7 +93,7 @@ I executed the scan in two different ways to check if the result varies or not:
 
 <br>
 
-**Step-5: Identify Potential Security Risks from Open Ports:**  <br>
+### **Step-5: Identify Potential Security Risks from Open Ports:**  <br>
 
 The most critical part of this task is researching of commonly running services on these ports. An open port is only a risk if the service running on it is vulnerable or misconfigured.
 
@@ -99,7 +101,7 @@ The highest risk ports you found are:
 <br>
 1) Ports 139/tcp and 445/tcp (SMB/CIFS): These are used for Windows file and printer sharing.
 
-     • Risk: If the operating system (OS) or the sharing service is not patched, an attacker can exploit vulnerabilities like the infamous EternalBlue to gain control or plant malware (e.g., ransomware). It also exposes system information like user lists and shared folders to anyone on the network.  <br>
+     • Risk: If the operating system (OS) or the sharing service is not patched, an attacker can exploit vulnerabilities like the infamous <br> &nbsp;  EternalBlue to gain control or plant malware (e.g., ransomware). It also exposes system information like user lists and shared folders to <br> &nbsp;  anyone on the network.  <br>
      
 
 2) Port 1900/tcp (UPnP): This protocol allows devices to open ports on your router automatically without your permission.
@@ -109,7 +111,7 @@ The highest risk ports you found are:
 
 3) Ports 80/tcp, 443/tcp, 8080/tcp, 8443/tcp (Web Services):
 
-     • Risk: If the router's management interface or a local application running on these ports is running old software, it can be vulnerable to exploits like Cross-Site Scripting (XSS) or Authentication Bypass. Since the router is on **192.168.29.1**, it's the primary risk point.  <br>
+     • Risk: If the router's management interface or a local application running on these ports is running old software, it can be vulnerable to <br> &nbsp; exploits like Cross-Site Scripting (XSS) or Authentication Bypass. Since the router is on **192.168.29.1**, it's the primary risk point.  <br>
      
 4) Port 554/tcp (RTSP): If this is a camera, it likely requires strong authentication.
 
@@ -117,13 +119,13 @@ The highest risk ports you found are:
 <br>
 
    
-<br> **Conclusion:**  <br>
+### <br> **Conclusion:**  <br>
 
 1)    The Nmap TCP SYN scan of the local network **(192.168.29.0/24)** successfully identified four active hosts. The analysis focused on the three devices that presented open ports to the network.<br>
 
 2)    The scan revealed critical security gaps, most notably on host **192.168.29.XX** and the network router **(192.168.29.X)**. <br> The primary risk vectors identified were: <br> 
-        •    File Sharing **(Ports 139/445)**: These exposed services are vulnerable to well-known exploits **(e.g., EternalBlue)** if the operating system is not fully patched.<br> 
-        •    **UPnP (Port 1900):** This service grants devices the ability to automatically bypass the router's firewall, creating an unauthorized vulnerability for malware.
+        •    **File Sharing (Ports 139/445)**: These exposed services are vulnerable to well-known exploits **(e.g., EternalBlue)** if the operating system is <br> &nbsp; not fully patched.<br> 
+        •    **UPnP (Port 1900):** This service grants devices the ability to automatically bypass the router's firewall, creating an unauthorized <br> &nbsp; vulnerability for malware.
 
 3)    To mitigate these immediate security risks, the following actions are strongly recommended: <br>
         •     Disable UPnP on the router **(192.168.29.X)** to prevent unauthorized firewall bypasses. <br>
