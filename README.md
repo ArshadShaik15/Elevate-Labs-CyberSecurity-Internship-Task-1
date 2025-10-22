@@ -75,10 +75,11 @@ I executed the scan in two different ways to check if the result varies or not:
  
 <br>  
 <br>
+
 **Step-4: Noting down the IP Addresses, Open Ports, and Services found:**
 
       
-## Nmap Scan Results: Active Hosts and Open Ports
+### **Nmap Scan Results: Active Hosts and Open Ports**
 
 | IP Address | Host Description (Service Profile) | Open Ports (TCP) | Key Services Identified |
 | :--- | :--- | :--- | :--- |
