@@ -2,17 +2,30 @@
 
 <br>Task 1: Local Network Port Scan<br><br>
 
+**🎯 Objective:**  <br>
 
-**Step-1: Installing Nmap:** <br>
-•	I have installed the latest version of Nmap for windows from the official website. <br>
-•	Official Website: Navigate to the Nmap download page <br>
-•	Download the Installer: Choose the installer for your operating system (Windows, Linux, macOS). For Windows, the installer is usually called nmap-setup.exe
+The primary goal of this task is to learn and practice fundamental network reconnaissance skills by discovering open ports on devices within a local network to understand the network's exposure and potential security risks. <br>
+<br> 
+
+**Step-1: Lab Setup 🛠️** <br>
+<br>
+**Installing Nmap:**  <br>
+&nbsp; •	I have installed the latest version of Nmap for windows from the official website. <br>
+&nbsp; •	Official Website: Navigate to the Nmap download page https://nmap.org/download <br>
+&nbsp; •	Choose the installer for your operating system (Windows, Linux, macOS). For Windows, the installer is usually called nmap-setup.exe
+<br>
+
+**Installing Wireshark:** <br>
+&nbsp; •	I have installed the latest version of Wireshark for windows from the official website. <br>
+&nbsp; •	Official Website: Navigate to the Wireshark download page https://www.wireshark.org/download.html <br>
+&nbsp; •	Choose the installer for your operating system (Windows, Linux, macOS). For Windows, the installer is usually called Wireshark-4.6.0-x64.exe
+
 
 <br>
 
 **Step-2: Finding the local IP range:**
 
-1)	I have found my local IP network by running the command ipconfig in Command Prompt. You can follow the steps mentioned below (I will be covering the information as it is sensitive).
+1)	I have found my local IP network by running the command ipconfig in Command Prompt. You can follow the steps mentioned below (I will be hiding the IP Address and MAC Address).
 
     a.	Command for macOS/Linux: ip a (or) ifconfig
 
@@ -53,6 +66,7 @@ I executed the scan in two different ways to check if the result varies or not:
 
     <br>  <img width="710" height="858" alt="Screenshot 2025-10-20 232702" src="https://github.com/user-attachments/assets/73f20b98-2292-4e46-b9e3-49a98bf14144" />  <br>
 
+<br>
 
 4) I have also captured the packet for further analysis using Wireshark <br>
 
@@ -60,7 +74,7 @@ I executed the scan in two different ways to check if the result varies or not:
 
  
 <br>  
-
+<br>
 **Step-4: Noting down the IP Addresses, Open Ports, and Services found:**
 
       
@@ -71,7 +85,7 @@ I executed the scan in two different ways to check if the result varies or not:
 | **192.168.29.X** | Network Gateway / Router 📡 | 80, 443, 1900, 7443, 8080, 8443 | HTTP, HTTPS, UPnP, HTTPS-alt |
 | **192.168.29.XX** | Windows Device (PC/Server) 🖥️ | 135, 139, 445, 1069, 4343, 4449, 7070 | MSRPC, NetBIOS/SMB (File Sharing), Realserver |
 | **192.168.29.YY** | Streaming/Video Device | 80, 554 | HTTP, **RTSP** (Real-Time Streaming Protocol) |
-| **192.168.29.ZZ** | Active Host (Secure/Firewalled) | *None* | *All 1000 scanned ports were reported as closed.* |
+| **192.168.29.ZZ** | Active Host (Secure/Firewalled) | None | All 1000 scanned ports were reported as closed. |
 <br>
 
 <br>
@@ -110,7 +124,7 @@ The highest risk ports you found are:
         •    File Sharing **(Ports 139/445)**: These exposed services are vulnerable to well-known exploits **(e.g., EternalBlue)** if the operating system is not fully patched.<br> 
         •    **UPnP (Port 1900):** This service grants devices the ability to automatically bypass the router's firewall, creating an unauthorized vulnerability for malware.
 
-4)    To mitigate these immediate security risks, the following actions are strongly recommended: <br>
+3)    To mitigate these immediate security risks, the following actions are strongly recommended: <br>
         •     Disable UPnP on the router **(192.168.29.X)** to prevent unauthorized firewall bypasses. <br>
         •     Block TCP Ports 139 and 445 on all non-essential devices using the Windows Firewall or, preferably, disable the File and Printer Sharing service completely. <br>
         •     Enforce a strong, non-default password on the router's administration interface. <br>
