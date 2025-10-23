@@ -9,13 +9,12 @@
 <br> 
 <br>
 
-### **Step-1: Lab Setup 🛠️** <br>
+### **🛠️ Lab Setup:** <br> <br>
 
 ### **Installing Nmap:**  <br>
 <p align="left"> &nbsp; •	I have installed the latest version of Nmap for windows from the official website. <br> </p>
 <p align="left"> &nbsp; •	Official Website: Navigate to the Nmap download page https://nmap.org/download <br> </p>
-<p align="left"> &nbsp; •	Choose the installer for your operating system (Windows, Linux, macOS). For Windows, the installer is usually called nmap-setup.exe </p>
-<br>
+<p align="left"> &nbsp; •	Choose the installer for your operating system (Windows, Linux, macOS). For Windows, the installer is usually called nmap-setup.exe </p> 
 
 ### **Installing Wireshark:** <br>
 <p align="left"> &nbsp; •	I have installed the latest version of Wireshark for windows from the official website. <br> </p>
@@ -25,7 +24,7 @@
 
 <br>
 
-### **Step-2: Finding the local IP range:**
+### **Step-1: Finding the local IP range:**
 
 1)	I have found my local IP network by running the command ipconfig in Command Prompt. You can follow the steps mentioned below (I will be hiding the IP Address and MAC Address).
 
@@ -46,7 +45,7 @@
 <br>
 
 
-### **Step-3: Running the TCP SYN Scan:**
+### **Step-2: Running the TCP SYN Scan:**
 
 I executed the scan in two different ways to check if the result varies or not:
 
@@ -54,12 +53,11 @@ I executed the scan in two different ways to check if the result varies or not:
 
       •	In Windows: Right-click on Command Prompt and select "Run as Administrator."<br>
      <p align="left"> •	The Command Prompt uses CLI (Command Line Interface) which allows you to use flags (like -sS and -oA in your command), which unlock Nmap’s most advanced and specific features. </p>
-  	<br>
-
+     <br>
 2)	Run the command in Nmap directly.
 
       <p align="left"> •	It is a GUI (Graphical User Interface). Generally, This is what you're used to (like clicking a web browser or the Nmap installer). It's easy because it is designed in an interactive manner (clicking buttons, Options/Filters, etc) but it limits you to the options the developers put into buttons and menus. </p>
-
+      <br>
 3)  After running the scan, Both Command Prompt and Nmap provided me with the same results. 
 
 
@@ -78,7 +76,7 @@ I executed the scan in two different ways to check if the result varies or not:
 <br>  
 <br>
 
-### **Step-4: Noting down the IP Addresses, Open Ports, and Services found:**
+### **Step-3: Noting down the IP Addresses, Open Ports, and Services found:**
 
       
 ### **Nmap Scan Results: Active Hosts and Open Ports**
@@ -93,7 +91,7 @@ I executed the scan in two different ways to check if the result varies or not:
 
 <br>
 
-### **Step-5: Identify Potential Security Risks from Open Ports:**  <br>
+### **Step-4: Identify Potential Security Risks from Open Ports:**  <br>
 
 The most critical part of this task is researching of commonly running services on these ports. An open port is only a risk if the service running on it is vulnerable or misconfigured.
 
@@ -101,18 +99,16 @@ The highest risk ports you found are:
 <br>
 1) Ports 139/tcp and 445/tcp (SMB/CIFS): These are used for Windows file and printer sharing.
 
-   <p align="left">  • Risk: If the operating system (OS) or the sharing service is not patched, an attacker can exploit vulnerabilities like the infamous <strong>EternalBlue</strong> to gain control or plant malware (e.g., ransomware). It also exposes system information like user lists and shared folders to anyone on the network.  <br> </p>
-     
-
+   <p align="left">  • Risk: If the operating system (OS) or the sharing service is not patched, an attacker can exploit vulnerabilities like the infamous <strong>EternalBlue</strong> to gain control or plant malware (e.g., ransomware). It also exposes system information like user lists and shared folders to anyone on the network.  </p> 
+   <br>
 2) Port 1900/tcp (UPnP): This protocol allows devices to open ports on your router automatically without your permission.
 
-   <p align="left">  • Risk: Malware can use UPnP to open a port for itself, bypassing your firewall and making your device reachable from the public internet.  <br> </p>
-     
-
+   <p align="left">  • Risk: Malware can use UPnP to open a port for itself, bypassing your firewall and making your device reachable from the public internet.  </p>
+   <br>
 3) Ports 80/tcp, 443/tcp, 8080/tcp, 8443/tcp (Web Services):
 
-   <p align="left">  • Risk: If the router's management interface or a local application running on these ports is running old software, it can be vulnerable to exploits like Cross-Site Scripting (XSS) or Authentication Bypass. Since the router is on **192.168.29.1**, it's the primary risk point.  <br> </p>
-     
+   <p align="left">  • Risk: If the router's management interface or a local application running on these ports is running old software, it can be vulnerable to exploits like Cross-Site Scripting (XSS) or Authentication Bypass. Since the router is on **192.168.29.1**, it's the primary risk point.  </p>
+   <br>  
 4) Port 554/tcp (RTSP): If this is a camera, it likely requires strong authentication.
 
      • Risk: Weak or default passwords on an exposed camera/video system could allow an attacker to view your video feed.
