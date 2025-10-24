@@ -107,7 +107,7 @@ The highest risk ports you found are:
    <br>
 3) Ports 80/tcp, 443/tcp, 8080/tcp, 8443/tcp (Web Services):
 
-   <p align="left">  • Risk: If the router's management interface or a local application running on these ports is running old software, it can be vulnerable to exploits like Cross-Site Scripting (XSS) or Authentication Bypass. Since the router is on **192.168.29.1**, it's the primary risk point.  </p>
+   <p align="left">  • Risk: If the router's management interface or a local application running on these ports is running old software, it can be vulnerable to exploits like Cross-Site Scripting (XSS) or Authentication Bypass. Since the router is on <strong>192.168.29.X</strong>, it's the primary risk point.  </p>
    <br>  
 4) Port 554/tcp (RTSP): If this is a camera, it likely requires strong authentication.
 
