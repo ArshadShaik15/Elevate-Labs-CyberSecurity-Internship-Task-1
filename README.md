@@ -14,15 +14,14 @@
 ### **Installing Nmap:**  <br>
 <p align="left"> &nbsp; •	I have installed the latest version of Nmap for windows from the official website. <br> </p>
 <p align="left"> &nbsp; •	Official Website: Navigate to the Nmap download page https://nmap.org/download <br> </p>
-<p align="left"> &nbsp; •	Choose the installer for your operating system (Windows, Linux, macOS). For Windows, the installer is usually called nmap-setup.exe </p> 
-<br>
+<p align="left"> &nbsp; •	Choose the installer for your operating system (Windows, Linux, macOS). For Windows, the installer is usually called nmap-setup.exe </p><br>
 
 ### **Installing Wireshark:** <br>
 <p align="left"> &nbsp; •	I have installed the latest version of Wireshark for windows from the official website. <br> </p>
 <p align="left"> &nbsp; •	Official Website: Navigate to the Wireshark download page https://www.wireshark.org/download.html <br> </p>
 <p align="left"> &nbsp; •	Choose the installer for your operating system (Windows, Linux, macOS). For Windows, the installer is usually called Wireshark-4.6.0-x64.exe </p>
 
-
+<br>
 <br>
 
 ### **Step-1: Finding The Local IP Range:**
@@ -67,7 +66,6 @@ I executed the scan in two different ways to check if the result varies or not:
 
     <br>  <img width="710" height="858" alt="Screenshot 2025-10-20 232702" src="https://github.com/user-attachments/assets/73f20b98-2292-4e46-b9e3-49a98bf14144" />  <br>
 
-<br>
 
 4) I have also captured the packet for further analysis using Wireshark <br>
 
@@ -84,8 +82,8 @@ I executed the scan in two different ways to check if the result varies or not:
 
 | IP Address | Host Description (Service Profile) | Open Ports (TCP) | Key Services Identified |
 | :--- | :--- | :--- | :--- |
-| **192.168.29.X** | Network Gateway / Router 📡 | 80, 443, 1900, 7443, 8080, 8443 | HTTP, HTTPS, UPnP, HTTPS-alt |
-| **192.168.29.XX** | Windows Device (PC/Server) 🖥️ | 135, 139, 445, 1069, 4343, 4449, 7070 | MSRPC, NetBIOS/SMB (File Sharing), Realserver |
+| **192.168.29.X** | Network Gateway / Router) | 80, 443, 1900, 7443, 8080, 8443 | HTTP, HTTPS, UPnP, HTTPS-alt |
+| **192.168.29.XX** | Windows Device (PC/Server) | 135, 139, 445, 1069, 4343, 4449, 7070 | MSRPC, NetBIOS/SMB (File Sharing), Realserver |
 | **192.168.29.YY** | Streaming/Video Device | 80, 554 | HTTP, **RTSP** (Real-Time Streaming Protocol) |
 | **192.168.29.ZZ** | Active Host (Secure/Firewalled) | None | All 1000 scanned ports were reported as closed. |
 <br>
@@ -100,20 +98,21 @@ The highest risk ports you found are:
 <br>
 1) Ports 139/tcp and 445/tcp (SMB/CIFS): These are used for Windows file and printer sharing.
 
-   <p align="left">  • Risk: If the operating system (OS) or the sharing service is not patched, an attacker can exploit vulnerabilities like the infamous <strong>EternalBlue</strong> to gain control or plant malware (e.g., ransomware). It also exposes system information like user lists and shared folders to anyone on the network.  </p> 
-   <br>
+   <p align="left">  •    If the operating system (OS) or the sharing service is not patched, an attacker can exploit vulnerabilities like the infamous <strong>EternalBlue</strong> to gain control or plant malware (e.g., ransomware). It also exposes system information like user lists and shared folders to anyone on the network.  </p>
+   
 2) Port 1900/tcp (UPnP): This protocol allows devices to open ports on your router automatically without your permission.
 
-   <p align="left">  • Risk: Malware can use UPnP to open a port for itself, bypassing your firewall and making your device reachable from the public internet.  </p>
-   <br>
+   <p align="left">  •    Malware can use UPnP to open a port for itself, bypassing your firewall and making your device reachable from the public internet.  </p>
+   
 3) Ports 80/tcp, 443/tcp, 8080/tcp, 8443/tcp (Web Services):
 
-   <p align="left">  • Risk: If the router's management interface or a local application running on these ports is running old software, it can be vulnerable to exploits like Cross-Site Scripting (XSS) or Authentication Bypass. Since the router is on <strong>192.168.29.X</strong>, it's the primary risk point.  </p>
-   <br>  
+   <p align="left">  •    If the router's management interface or a local application running on these ports is running old software, it can be vulnerable to exploits like Cross-Site Scripting (XSS) or Authentication Bypass. Since the router is on <strong>192.168.29.X</strong>, it's the primary risk point.  </p>
+   
 4) Port 554/tcp (RTSP): If this is a camera, it likely requires strong authentication.
 
-     • Risk: Weak or default passwords on an exposed camera/video system could allow an attacker to view your video feed.
-<br>
+     •    Weak or default passwords on an exposed camera/video system could allow an attacker to view your video feed.
+   <br>
+   <br>
 
    
 ### <br> **Conclusion:**  <br>
