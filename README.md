@@ -1,6 +1,6 @@
 # Elevate-Labs-CyberSecurity-Internship-Task-1<br>
 
-<br>Task 1: Local Network Port Scan<br><br>
+### <br>Task 1: Local Network Port Scan<br><br>
 <br>
 
 ### **🎯 Objective:**  <br>
@@ -15,6 +15,7 @@
 <p align="left"> &nbsp; •	I have installed the latest version of Nmap for windows from the official website. <br> </p>
 <p align="left"> &nbsp; •	Official Website: Navigate to the Nmap download page https://nmap.org/download <br> </p>
 <p align="left"> &nbsp; •	Choose the installer for your operating system (Windows, Linux, macOS). For Windows, the installer is usually called nmap-setup.exe </p> 
+<br>
 
 ### **Installing Wireshark:** <br>
 <p align="left"> &nbsp; •	I have installed the latest version of Wireshark for windows from the official website. <br> </p>
@@ -24,7 +25,7 @@
 
 <br>
 
-### **Step-1: Finding the local IP range:**
+### **Step-1: Finding The Local IP Range:**
 
 1)	I have found my local IP network by running the command ipconfig in Command Prompt. You can follow the steps mentioned below (I will be hiding the IP Address and MAC Address).
 
@@ -45,7 +46,7 @@
 <br>
 
 
-### **Step-2: Running the TCP SYN Scan:**
+### **Step-2: Running The TCP SYN Scan:**
 
 I executed the scan in two different ways to check if the result varies or not:
 
@@ -76,10 +77,10 @@ I executed the scan in two different ways to check if the result varies or not:
 <br>  
 <br>
 
-### **Step-3: Noting down the IP Addresses, Open Ports, and Services found:**
+### **Step-3: Noting Down The IP Addresses, Open Ports, And Services Found:**
 
       
-### **Nmap Scan Results: Active Hosts and Open Ports**
+### **Nmap Scan Results: Active Hosts And Open Ports**
 
 | IP Address | Host Description (Service Profile) | Open Ports (TCP) | Key Services Identified |
 | :--- | :--- | :--- | :--- |
@@ -91,7 +92,7 @@ I executed the scan in two different ways to check if the result varies or not:
 
 <br>
 
-### **Step-4: Identify Potential Security Risks from Open Ports:**  <br>
+### **Step-4: Identify Potential Security Risks From Open Ports:**  <br>
 
 The most critical part of this task is researching of commonly running services on these ports. An open port is only a risk if the service running on it is vulnerable or misconfigured.
 
